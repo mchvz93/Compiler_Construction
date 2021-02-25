@@ -1,0 +1,105 @@
+============Initializing Lexical/Syntax Analyzer Program================
+
+ ======================================================
+ Token                Lexeme 
+ ======================================================
+Token: Keyword        Lexeme: int
+<Statement> -> <Declaration>
+
+<Declaration> -> int <Identifier> <Declaration> <Number>
+
+Token: Identifier     Lexeme: num1
+Token: Separator      Lexeme: ,
+<Declaration Number> -> , <Identifier> <Declaration Number>
+
+Token: Identifier     Lexeme: num2
+Token: Separator      Lexeme: ,
+<Declaration Number> -> , <Identifier> <Declaration Number>
+
+Token: Identifier     Lexeme: large$
+Token: Separator      Lexeme: ;
+Declaration Number> -> ; <Statement>
+
+Token: Keyword        Lexeme: if
+<Statement> -> <Selection>
+
+<Selection> -> if ( <Conditional> ) { <Statement> }
+
+Token: Separator      Lexeme: (
+Token: Identifier     Lexeme: num1
+<Conditional> -> <Expression> <Conditional Prime>
+
+<Expression> -> <Term> <Expression Prime>
+
+<Term> -> <Factor> <Term Prime>
+
+<Factor> -> <Identifier> <Factor Prime>
+
+Token: Operator       Lexeme: >
+<Factor Prime> -> <Epsilon>
+
+<Term Prime> -> <Epsilon>
+
+<Expression Prime> -> <Epsilon>
+
+<Conditional Prime> -> > <Expression>
+
+Token: Identifier     Lexeme: num2
+<Expression> -> <Term> <Expression Prime>
+
+<Term> -> <Factor> <Term Prime>
+
+<Factor> -> <Identifier> <Factor Prime>
+
+Token: Separator      Lexeme: )
+<Factor Prime> -> <Epsilon>
+
+<Term Prime> -> <Epsilon>
+
+<Expression Prime> -> <Epsilon>
+
+Token: Separator      Lexeme: {
+Token: Identifier     Lexeme: large$
+<Statement> -> <Assign>
+<Assign> -> <Identifier> = <Expression>
+
+Token: Operator       Lexeme: =
+Token: Identifier     Lexeme: num1
+<Expression> -> <Term> <Expression Prime>
+
+<Term> -> <Factor> <Term Prime>
+
+<Factor> -> <Identifier> <Factor Prime>
+
+Token: Separator      Lexeme: ;
+<Factor Prime> -> ; <Statement>
+
+Token: Separator      Lexeme: }
+<Statement> -> <Epsilon>
+
+<Term Prime> -> <Epsilon>
+
+<Expression Prime> -> <Epsilon>
+
+Token: Keyword        Lexeme: else
+<Statement> -> <Selection>
+
+<Selection> -> else { <Statement> }  <Statement>
+
+Token: Separator      Lexeme: {
+Token: Identifier     Lexeme: large
+<Statement> -> <Assign>
+<Assign> -> <Identifier> = <Expression>
+
+[ERROR]: 'large' was not initialized.
+ ======================================================
+
+
+ ==========================
+ Symbol Table 
+ ==========================
+ num1        0x105829580
+ num2        0x105829598
+ large$      0x1058295b0
+ ==========================
+

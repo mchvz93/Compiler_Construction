@@ -1,0 +1,154 @@
+============Initializing Lexical/Syntax Analyzer Program================
+
+ ======================================================
+ Token                Lexeme 
+ ======================================================
+Token: Keyword        Lexeme: int
+<Statement> -> <Declaration>
+
+<Declaration> -> int <Identifier> <Declaration> <Number>
+
+Token: Identifier     Lexeme: count
+Token: Operator       Lexeme: =
+<Declaration Number> -> = <Number> <Declaration Number>
+
+Token: Integer        Lexeme: 0
+Token: Separator      Lexeme: ;
+Declaration Number> -> ; <Statement>
+
+Token: Keyword        Lexeme: int
+<Statement> -> <Declaration>
+
+<Declaration> -> int <Identifier> <Declaration> <Number>
+
+Token: Identifier     Lexeme: num1
+Token: Separator      Lexeme: ,
+<Declaration Number> -> , <Identifier> <Declaration Number>
+
+Token: Identifier     Lexeme: num2
+Token: Separator      Lexeme: ,
+<Declaration Number> -> , <Identifier> <Declaration Number>
+
+Token: Identifier     Lexeme: large$
+Token: Separator      Lexeme: ;
+Declaration Number> -> ; <Statement>
+
+Token: Keyword        Lexeme: if
+<Statement> -> <Selection>
+
+<Selection> -> if ( <Conditional> ) { <Statement> }
+
+Token: Separator      Lexeme: (
+Token: Identifier     Lexeme: num1
+<Conditional> -> <Expression> <Conditional Prime>
+
+<Expression> -> <Term> <Expression Prime>
+
+<Term> -> <Factor> <Term Prime>
+
+<Factor> -> <Identifier> <Factor Prime>
+
+Token: Operator       Lexeme: >
+<Factor Prime> -> <Epsilon>
+
+<Term Prime> -> <Epsilon>
+
+<Expression Prime> -> <Epsilon>
+
+<Conditional Prime> -> > <Expression>
+
+Token: Identifier     Lexeme: num2
+<Expression> -> <Term> <Expression Prime>
+
+<Term> -> <Factor> <Term Prime>
+
+<Factor> -> <Identifier> <Factor Prime>
+
+Token: Separator      Lexeme: )
+<Factor Prime> -> <Epsilon>
+
+<Term Prime> -> <Epsilon>
+
+<Expression Prime> -> <Epsilon>
+
+Token: Separator      Lexeme: {
+Token: Identifier     Lexeme: large$
+<Statement> -> <Assign>
+<Assign> -> <Identifier> = <Expression>
+
+Token: Operator       Lexeme: =
+Token: Identifier     Lexeme: num1
+<Expression> -> <Term> <Expression Prime>
+
+<Term> -> <Factor> <Term Prime>
+
+<Factor> -> <Identifier> <Factor Prime>
+
+Token: Separator      Lexeme: ;
+<Factor Prime> -> ; <Statement>
+
+Token: Separator      Lexeme: }
+<Statement> -> <Epsilon>
+
+<Term Prime> -> <Epsilon>
+
+<Expression Prime> -> <Epsilon>
+
+Token: Keyword        Lexeme: else
+<Statement> -> <Selection>
+
+<Selection> -> else { <Statement> }  <Statement>
+
+Token: Separator      Lexeme: {
+Token: Identifier     Lexeme: large$
+<Statement> -> <Assign>
+<Assign> -> <Identifier> = <Expression>
+
+Token: Operator       Lexeme: =
+Token: Identifier     Lexeme: num2
+<Expression> -> <Term> <Expression Prime>
+
+<Term> -> <Factor> <Term Prime>
+
+<Factor> -> <Identifier> <Factor Prime>
+
+Token: Separator      Lexeme: ;
+<Factor Prime> -> ; <Statement>
+
+Token: Separator      Lexeme: }
+<Statement> -> <Epsilon>
+
+<Term Prime> -> <Epsilon>
+
+<Expression Prime> -> <Epsilon>
+
+Token: Keyword        Lexeme: float
+<Statement> -> <Declaration>
+
+<Declaration> -> float <Identifier> <Declaration> <Number>
+
+Token: Identifier     Lexeme: x
+Token: Operator       Lexeme: =
+<Declaration Number> -> = <Number> <Declaration Number>
+
+Token: Integer        Lexeme: 3.0
+Token: Separator      Lexeme: ;
+<Declaration Float> -> ; <Statement>
+
+Token: $              Lexeme: FIN
+[SUCCESS]: End of file reached. String accepted.
+ ======================================================
+
+
+ ==========================
+ Symbol Table 
+ ==========================
+ count       0x105b041a0
+ num1        0x105b041b8
+ num2        0x105b041d0
+ large$      0x105b041e8
+ x           0x105b04200
+ ==========================
+
+
+Syntax program is Terminating.
