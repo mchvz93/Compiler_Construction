@@ -1,0 +1,13 @@
+!------This is Test2------!
+int num1, num2, large$;
+if(num1 > num2) 
+{
+	large$ = num1;
+}
+else 
+{
+	large = num2;
+
+} 
+
+float x = 3.0;
